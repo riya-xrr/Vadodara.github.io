@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places to visit in Vadodra
+    </title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+        body {
+            font-family: 'PT Sans', sans-serif;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+            height: 27vh;
+        }
+
+        /* .fixing{
+            position: fixed;
+            top: 0;
+        } */
+
+        #riya {
+            /*background-color: aquamarine;
+             transparent soon */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .logo {
+            margin: 10px;
+            display: flex;
+            font-size: 30px;
+            margin-top: 15px;
+            margin-left: 22px;
+        }
+
+        #imglogo {
+            width: 37px;
+            height: 37px;
+            margin-right: 3px;
+        }
+
+        .feedback1 {
+            background-color: transparent;
+            border-color: transparent;
+            color: black;
+            margin: 22px;
+            cursor: pointer;
+            border-radius: 19px;
+            background-color: white;
+            font-size: 14.5px;
+            /* border-width: 0.1px; */
+        }
+
+        .feedback1:hover {
+            background-color: rgb(223, 216, 216);
+            color: black;
+            /* border-color: black; */
+            /* border-width: 0.1px; */
+        }
+
+        @media (max-width: 750px) {
+            #largescreen {
+                display: none;
+            }
+
+            #imglogo {
+                height: 32px;
+                width: 32px;
+            }
+
+            #smallscreen {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px;
+                padding-top: 13px;
+            }
+
+            .feedback1 {
+                margin: 15px;
+            }
+        }
+
+        @media (min-width: 750px) {
+            #smallscreen {
+                display: none;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+            padding-top: 13px;
+        }
+
+        .element {
+            width: 100px;
+            border-bottom: 12px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .text {
+            padding: 5px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .element:hover {
+            border-bottom: 3px solid white;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container img {
+            width: 25px;
+            height: 25px;
+        }
+
+
+        .nav::before {
+            background: url("bounceup2.jpg");
+            position: absolute;
+            content: "";
+            z-index: -1;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 490px) {
+            #smallscreen {
+                padding-top: 7px;
+                padding: 5px;
+            }
+
+            .logo {
+                font-size: 27px;
+            }
+
+            #imglogo {
+                width: 29px;
+                height: 29px;
+            }
+        }
+
+        .search {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search {
+            height: 8vh;
+            /* background-color: antiquewhite; */
+        }
+
+        .searchme {
+            height: 65%;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search input {
+            height: 90%;
+            width: 80%;
+            margin-left: 7%;
+            /* border-radius: 17px; */
+            /* margin-top: 11px; */
+            border: 0;
+            padding: 11px;
+        }
+
+        #search {
+            border: none;
+        }
+
+        .search img {
+            height: 24px;
+            width: 24px;
+            margin-right: 6px;
+            /* margin-top: 5.5px; */
+        }
+
+        #describe {
+            margin-top: 30vh;
+            margin-left: 3.5vw;
+            margin-right: 35vw;
+            font-size: 100%;
+        }
+
+        #title {
+            height: 7vh;
+            font-size: 2em;
+        }
+
+        #dtext {
+            height: 25vh;
+            font-size: 1em;
+        }
+
+        #more {
+            margin-top: 1vh;
+            /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); */
+        }
+
+        #more a {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        #moretext {
+            height: 5vh;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 650px) {
+            #describe {
+                margin-right: 3.5vw;
+            }
+
+            #more a {
+                font-size: 17px;
+            }
+        }
+
+        /* gird elements */
+
+        .grid-container a {
+            text-decoration: none;
+        }
+
+        #back1 {
+            background: url(apati2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #back2 {
+            background: url(barodamuseum2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #back3 {
+            background: url(peshwarires1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #back4 {
+            background: url(bayleaf2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #back5 {
+            background: url(laxmivilla4.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #back6 {
+            background: url(bounceup.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .grid a {
+            display: flex;
+            margin-left: 0.35%;
+            margin-right: 0.35%;
+            /* flex-shrink: 0; */
+            margin-bottom: 0.7%;
+            height: 256px;
+            cursor: pointer;
+            width: 100%;
+            align-items: flex-end;
+            /* text-decoration: none; */
+            color: aliceblue;
+            padding-left: 5%;
+            padding-bottom: 3%;
+            font-size: 130%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 25%);
+            /* z-index: 20; */
+            margin: 0;
+
+        }
+
+        .grid img {
+            /* height: 250px; */
+            width: auto;
+            /* background-size: contain; */
+            /* height: 1000px; */
+        }
+
+        .grid-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 5vh;
+        }
+
+        .grid {
+            display: flex;
+            /* align-items: center; */
+            background-color: aquamarine;
+            margin-left: 0.35%;
+            margin-right: 0.35%;
+            flex-shrink: 0;
+            margin-bottom: 0.7%;
+            height: 256px;
+            cursor: pointer;
+            width: 31%;
+            /* justify-content: center; */
+            align-items: flex-end;
+
+        }
+
+        .grid:hover {
+            /* -webkit-transform: scale(1.2); */
+            /* -ms-transform: scale(1.2); */
+            transform: scale(1.1);
+            transition: all .5s ease;
+            border-radius: 20px;
+        }
+
+        .grid a:hover {
+            border-radius: 20px;
+        }
+
+        @media (max-width: 1000px) {
+            .grid {
+                width: 47%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="nav">
+        <!-- <div class="fixing"> -->
+        <header id="riya">
+            <div class="logo">
+                <a href="index.html">
+                    <img id="imglogo" src="logo.png">Vadodara
+                </a>
+            </div>
+            <div class="container" id="largescreen">
+                <div class="element"> <a href="heritage.html">
+                        <div class="icon"><img src="1.png"></div>
+                        <div class="text">Heritage</div>
+                    </a> </div>
+                <div class="element"> <a href="food.html">
+                        <div class="icon"><img src="2.png"></div>
+                        <div class="text">Food</div>
+                    </a> </div>
+                <div class="element"> <a href="adventure.html">
+                        <div class="icon"><img src="3.png"></div>
+                        <div class="text">Attractions
+                        </div>
+                    </a> </div>
+            </div>
+            <button class="feedback1">
+                Give Your Feedback
+            </button>
+
+        </header>
+
+        <div class="container" id="smallscreen">
+            <div class="element"> <a href="heritage.html">
+                    <div class="icon"><img src="1.png"></div>
+                    <div class="text">Heritage</div>
+                </a> </div>
+            <div class="element"> <a href="food.html">
+                    <div class="icon"><img src="2.png"></div>
+                    <div class="text">Food</div>
+                </a> </div>
+            <div class="element"> <a href="adventure.html">
+                    <div class="icon"><img src="3.png"></div>
+                    <div class="text">Attractions
+                    </div>
+                </a> </div>
+        </div>
+
+
+        <!-- search -->
+        <div class="search">
+            <div class="searchme">
+                <input type="text" name="search" id="search" placeholder="Search for more">
+                <img src="4.png" alt="">
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <div id="describe">
+        <div id="title">Bounce Up and House of Air</div>
+        <div id="dtext">Bounce your way into a fun time! Visit us to experience Vadodara's First trampoline park and try
+            all the amusing activities with your friends and family. <a
+                href="https://www.bing.com/search?q=bounce+up+and+house+of+air+vadodara&qs=NW_XFC&pq=bounce+up+and+house+of+air+vado&sc=9-31&cvid=ED0D7CA3157D4859B98E896A77704DC9&FORM=QBRE&sp=1" target="_blank"><i><u>know
+                        more</u></i></a> </div>
+    </div>
+
+    <div id="more">
+        <a href="#reachgrid">
+            <div id="moretext"> Explore More Getaways</div>
+            <div>
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_H6LAE4.json" background="transparent"
+                    speed="1" style="width: 75px; height: 75px;" loop autoplay></lottie-player>
+            </div>
+        </a>
+    </div>
+
+    <!-- gird element -->
+    <div class="grid-container" id="reachgrid">
+        <div class="grid" id="back1"> <a href="apati.html"> Apati Wonderland </a></div>
+        <div class="grid" id="back2"> <a href="barodamuseum.html"> Baroda Museum and Picture Gallery </a></div>
+        <div class="grid" id="back3"> <a href="peshwari.html"> Peshwari Restaurant </a></div>
+        <div class="grid" id="back4"> <a href="bayleaf.html"> Bayleaf Multi Cuisine Restaurant </a></div>
+        <div class="grid" id="back5"> <a href="laxmivilla.html"> Laxmi Villas Palace </a></div>
+        <div class="grid" id="back6"> <a href="bounceup.html"> Bounce Up and House of Air </a></div>
+    </div>
+
+
+</body>
+
+</html>
+</body>
+
+</html>
